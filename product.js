@@ -2,19 +2,19 @@ let lessons = [
     {
         "id": 1001,
         "image": "image/1001.jpg",
-        "subject": "Artiste",
+        "subject": "Mathematics",
         "price": 100.00,
         "location": "Dubai",
-        "description": "This lesson is for students who find interest in playing Chess and board games!",
+        "description": "This is an extra lesson sessions for students who have missed maths class!",
         "availability": 5
     },
     {
         "id": 1002,
         "image": "image/Best F.jpg",
-        "subject": "Explorer",
+        "subject": "English",
         "price": 500.00,
         "location": "Sydney",
-        "description": "This is an extra lesson session for students who wish to improve their exploring skills",
+        "description": "This is an extra lesson sessions for students who need extra tutoring in english !!",
         "availability": 5
        
     },
@@ -25,25 +25,25 @@ let lessons = [
         "price": 900.00,
         "location": "England",
         "description": "This is a session for students who wish to improve their music skills and knowlegde",
-        "availability": 5
+        "availability": 12
     },
     {
         "id": 1004,
-        "image": "image/Free 2.jpg",
-        "subject": "English",
+        "image": "image/Sungba remix.jpg",
+        "subject": "Physics",
         "price": 70.00,
         "location": "Ghana",
-        "description": "Join us and improve your English Language skills",
-        "availability": 5
+        "description": "Be Amazed!. Join us, learn the amazing techniques behind the mechanics of the world",
+        "availability": 2
     },
     {
         "id": 1005,
         "image": "image/Poli.jpg",
-        "subject": "politics",
+        "subject": "Political Science",
         "price": 500.00,
         "location": "Dubai",
         "description": "This course is for students who wish to improve their political understanding!.",
-        "availability": 5
+        "availability": 13
     },
     {
         "id": 1006,
@@ -52,7 +52,7 @@ let lessons = [
         "price": 300.00,
         "location": "London",
         "description": "Come to expand your knowledge on the fundamentals of web and app Development",
-        "availability": 5
+        "availability": 7
     },
     {
         "id": 1007,
@@ -66,28 +66,28 @@ let lessons = [
     {
         "id": 1008,
         "image": "image/MINIING.jpg",
-        "subject": "Engineering",
+        "subject": "Chemistry",
         "price": 30.00,
         "location": "Glasgow",
-        "description": "This is a make up classes for the Engineering lectures",
+        "description": "All ye aspiring chemists!, come learn the secrets of heisenberg!",
         "availability": 5
     },
     {
         "id": 1009,
         "image": "image/Roots.jpg",
-        "subject": "Culture 101",
+        "subject": "Data Processing",
         "price": 800.00,
         "location": "Nigeria",
-        "description": "Come for the basic tutoring on learing your culture ",
-        "availability": 5
+        "description": "This session offers insights into the world of data science and data analysis ",
+        "availability": 8
     },
     {
         "id": 1010,
         "image": "image/code.png",
-        "subject": "Music",
+        "subject": "Catering",
         "price": 400.00,
         "location": "Houston",
-        "description": "This is for all Music Fanatics, come for tutoring in music.",
-        "availability": 5
+        "description": "Come and learn how to cook. Perfect classes to begin your cooking journey",
+        "availability": 9
     }
 ]
