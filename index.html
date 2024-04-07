@@ -13,51 +13,55 @@
 
 <body>
     <div id="app">
-        <div class="navbar">
-            <div class="logo">
+        <div>
+            <div>
                 <h2>{{header}}</h2>
             </div>
-            <div class="nav-items">
+            <div>
+                <div>
+                    <input type="text" placeholder="Search Lessons" v-model="searchTerm">
+                    <button>Search</button>
+                </div>
 
             </div>
-            <div class="cart-buttons">
-                <button class="show-checkout" v-on:click="showCheckout" v-if="cartItemCount >= 1">View Cart
+            <div>
+                <button v-on:click="showCheckout" v-if="cartItemCount >= 1">View Cart
                     ({{cartItemCount}})</button>
-                <button class="show-checkout" v-else-if="showLessons">View Cart ({{cartItemCount}})</button>
-                <button class="show-checkout" v-else disabled>View Cart ({{cartItemCount}})</button>
+                <button v-else-if="returnToLessons()">View Cart ({{cartItemCount}})</button>
+                <button v-else disabled>View Cart ({{cartItemCount}})</button>
             </div>
         </div>
 
 
 
-        <div class="show-lesson" v-if="showLessons">
+        <div v-if="showLessons">
             <section class="sort-section">
                 <div class="sort">
                     <h2>Apply Filters</h2>
 
-                    <div class="criteria">
+                    <div>
                         <input type="checkbox" name="By Subject" id="" v-model="sortBySubject">
                         <span class="checkbox-text">By Subject</span>
                     </div>
-                    <div class="criteria">
+                    <div>
                         <input type="checkbox" name="By Location" id="" v-model="sortByLocation">
                         <span class="checkbox-text">By Location</span>
                     </div>
-                    <div class="criteria">
+                    <div>
                         <input type="checkbox" name="By Price" id="" v-model="sortByPrice">
                         <span class="checkbox-text"> By Price</span>
                     </div>
-                    <div class="criteria">
+                    <div>
                         <input type="checkbox" name="By Availability" id="" v-model="sortByAvailability">
                         <span class="checkbox-text">By Availability</span>
                     </div>
 
-                    <div class="order">
-                        <div class="criteria">
+                    <div>
+                        <div>
                             <input type="checkbox" name="ascending" id="" v-model="ascending">
                             <span class="checkbox-text"> Ascending Order</span>
                         </div>
-                        <div class="criteria">
+                        <div>
                             <input type="checkbox" name="descending" id="" v-model="descending">
                             <span class="checkbox-text">Descending Order</span>
                         </div>
@@ -66,14 +70,14 @@
                 </div>
             </section>
 
-            <section class="main">
+            <section>
                 <!-- display lessons -->
                 <div class="lessons" v-for="lesson in searchLessons">
                     <div class="lesson">
                         <div class="image-holder">
-                            <img v-bind:src="lesson.image" class="lesson-image" alt="lesson image">
+                            <img v-bind:src="lesson.image" alt="lesson image">
                         </div>
-                        <div class="lesson-description">
+                        <div>
                             <h2>{{lesson.subject}}</h2>
                             <p>{{lesson.description}}</p>
                             <p>Location: {{lesson.location}}</p>
@@ -81,9 +85,9 @@
                                 <p> DHS {{lesson.price}}</p>
                                 <span>Available Stock: {{lesson.availability - cartCount(lesson.id)}}</span>
                             </div>
-                            <button class="add-to-cart-button" v-on:click="addToCart(lesson)"
-                                :disabled="!canAddToCart(lesson)">Add to Cart</button>
-                            <div class="message">
+                            <button v-on:click="addToCart(lesson)" :disabled="!canAddToCart(lesson)">Add to
+                                Cart</button>
+                            <div>
                                 <span v-if="lesson.availability === cartCount(lesson.id)">Lesson Out of Stock</span>
                                 <span v-else-if="lesson.availability - cartCount(lesson.id)">
                                     Hurry now!. {{lesson.availability - cartCount(lesson.id)}} Spaces Left!
@@ -95,35 +99,35 @@
                 </div>
             </section>
         </div>
-        <div class="showCheckout" v-else>
+        <div v-else>
             <!-- checkout functionality -->
             <h2 class="title">{{checkout}}</h2>
-            <div class="cart-items">
-                <div class="cart-item" v-for="lessonID in cartSet" :key="lessonID">
+            <div>
+                <div v-for="lessonID in cartSet" :key="lessonID">
 
                     <div v-if="lesson = lessons.find(lesson => lesson.id === lessonID)" class="item-data">
-                        <div class="item-image">
+                        <div>
                             <img v-bind:src="lesson.image" class="lesson-image" alt="lesson image">
                         </div>
-                        <div class="cart-item-description">
+                        <div>
                             <h2>subject:{{lesson.subject}}</h2>
                             <p>description:{{lesson.description}}</p>
                             <p>location:{{lesson.location}}</p>
-                            <div class="price-stock">
+                            <div>
                                 <p>price: DHS {{lesson.price}}</p>
                                 <span>Available Stock: {{lesson.availability - cartCount(lesson.id)}}</span>
                             </div>
                         </div>
                     </div>
-                    <div class="delete-from-cart">
+                    <div>
                         <button class="remove-from-cart" v-on:click="removeFromCart(lessonID)">Remove from Cart</button>
                     </div>
 
                 </div>
             </div>
             <!-- user info -->
-            <div class="checkout-details">
-                <div class="details-input">
+            <div>
+                <div>
                     <h2 class="order-title">Please enter Order Details</h2>
                     <label for="Name">Customer Name</label> <br>
                     <input type="text" name="" id="" v-model="customerName"> <br>
@@ -185,6 +189,11 @@
                     let index = this.cart.indexOf(lessonID);
                     if (index !== -1) {
                         this.cart.splice(index, 1);
+                    }
+                },
+                returnToLessons() {
+                    if (this.showCheckout && this.cart.length <= 0) {
+                        this.showLessons = true;
                     }
                 },
                 showCheckout() {
