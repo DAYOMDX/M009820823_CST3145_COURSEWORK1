@@ -9,6 +9,12 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <!-- link to JS file for product -->
     <script src="product.js"></script>
+    <style>
+        .image{
+            height: 30px;
+            width: 30px;
+        }
+    </style>
 </head>
 
 <body>
@@ -75,7 +81,7 @@
                 <div class="lessons" v-for="lesson in searchLessons">
                     <div class="lesson">
                         <div class="image-holder">
-                            <img v-bind:src="lesson.image" alt="lesson image">
+                            <img v-bind:src="lesson.image" alt="lesson image" style="height: 350px; width: 350px;">
                         </div>
                         <div>
                             <h2>{{lesson.subject}}</h2>
@@ -107,7 +113,7 @@
 
                     <div v-if="lesson = lessons.find(lesson => lesson.id === lessonID)" class="item-data">
                         <div>
-                            <img v-bind:src="lesson.image" class="lesson-image" alt="lesson image">
+                            <img v-bind:src="lesson.image" class="image" alt="lesson image">
                         </div>
                         <div>
                             <h2>subject:{{lesson.subject}}</h2>

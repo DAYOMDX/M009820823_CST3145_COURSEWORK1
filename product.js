@@ -1,7 +1,7 @@
 let lessons = [
     {
         "id": 1001,
-        "image": "image/1001.jpg",
+        "image": "image/Mathematics.jpg",
         "subject": "Mathematics",
         "price": 100.00,
         "location": "Dubai",
@@ -10,7 +10,7 @@ let lessons = [
     },
     {
         "id": 1002,
-        "image": "image/Best F.jpg",
+        "image": "image/English.jpg",
         "subject": "English",
         "price": 500.00,
         "location": "Sydney",
@@ -20,7 +20,7 @@ let lessons = [
     },
     {
         "id": 1003,
-        "image": "image/DML.jpg",
+        "image": "image/Music.jpg",
         "subject": "music Art",
         "price": 900.00,
         "location": "England",
@@ -29,7 +29,7 @@ let lessons = [
     },
     {
         "id": 1004,
-        "image": "image/Sungba remix.jpg",
+        "image": "image/Physics.jpg",
         "subject": "Physics",
         "price": 70.00,
         "location": "Ghana",
@@ -47,8 +47,8 @@ let lessons = [
     },
     {
         "id": 1006,
-        "image": "image/code.png",
-        "subject": "Computer-Science",
+        "image": "image/Data-processing.jpg",
+        "subject": "Data-processing",
         "price": 300.00,
         "location": "London",
         "description": "Come to expand your knowledge on the fundamentals of web and app Development",
@@ -56,7 +56,7 @@ let lessons = [
     },
     {
         "id": 1007,
-        "image": "image/Best F.jpg",
+        "image": "image/Fine-arts.jpg",
         "subject": "Fine-Art",
         "price": 200.00,
         "location": "Abu-Dhabi",
@@ -65,7 +65,7 @@ let lessons = [
     },
     {
         "id": 1008,
-        "image": "image/MINIING.jpg",
+        "image": "image/Chemistry.jpg",
         "subject": "Chemistry",
         "price": 30.00,
         "location": "Glasgow",
@@ -74,8 +74,8 @@ let lessons = [
     },
     {
         "id": 1009,
-        "image": "image/Roots.jpg",
-        "subject": "Data Processing",
+        "image": "image/MINIING.jpg",
+        "subject": "Engineering",
         "price": 800.00,
         "location": "Nigeria",
         "description": "This session offers insights into the world of data science and data analysis ",
@@ -83,7 +83,7 @@ let lessons = [
     },
     {
         "id": 1010,
-        "image": "image/code.png",
+        "image": "image/Catering.jpg",
         "subject": "Catering",
         "price": 400.00,
         "location": "Houston",
