@@ -78,6 +78,7 @@
 
             <section>
                 <!-- display lessons -->
+               <!--v-for is for displaying--> 
                 <div class="lessons" v-for="lesson in searchLessons">
                     <div class="lesson">
                         <div class="image-holder">
@@ -91,6 +92,7 @@
                                 <p> DHS {{lesson.price}}</p>
                                 <span>Available Stock: {{lesson.availability - cartCount(lesson.id)}}</span>
                             </div>
+                            
                             <button v-on:click="addToCart(lesson)" :disabled="!canAddToCart(lesson)">Add to
                                 Cart</button>
                             <div>
@@ -158,7 +160,9 @@
                 checkout: "Checkout Page",
                 lessons: lessons,
                 showLessons: true,
+                // cart container
                 cart: [],
+                // sorting variables
                 sortedLessons: [...lessons],
                 sortByPrice: false,
                 sortBySubject: false,
@@ -172,12 +176,14 @@
 
             },
             methods: {
+                // this function check if the cart length is not zero(empty) before the user adds to cart
                 canAddToCart(lesson) {
                     return lesson.availability > this.cartCount(lesson.id);
                 },
                 cartEmpty() {
 
                 },
+                // this function uses a for loop to check the number of items in the cart
                 cartCount(id) {
                     let count = 0;
                     for (let i = 0; i < this.cart.length; i++) {
@@ -187,6 +193,7 @@
                     }
                     return count;
                 },
+                // this function uses the push method to add items to the cart array
                 addToCart(lesson) {
 
                     this.cart.push(lesson.id);                  //add to cart functionality//
@@ -254,6 +261,7 @@
                 }
 
             },
+            // change the values of the data object
             computed: {
                 cartItemCount() {
                     return this.cart.length || "";
